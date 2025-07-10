@@ -10,13 +10,17 @@ RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     git \
+    cmake \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pip and setuptools first
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir --upgrade pip setuptools==68.0.0 wheel==0.40.0
 
-# Copy requirements first to leverage Docker cache
+# Copy build files first
+COPY pyproject.toml .
 COPY requirements.txt .
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application
