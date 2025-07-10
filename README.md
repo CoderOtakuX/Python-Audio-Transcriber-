@@ -3,10 +3,11 @@ title: Audio Transcriber
 emoji: 🎙️
 colorFrom: blue
 colorTo: indigo
-sdk: docker
-sdk_version: "3.9"
+sdk: streamlit
+sdk_version: "1.28.0"
 app_file: app.py
 pinned: false
+license: mit
 ---
 
 # Audio Transcription App
@@ -28,5 +29,4 @@ A Streamlit-based application that transcribes audio files to text using faster-
 ## Technologies Used
 - Streamlit
 - faster-whisper
-- Python 3.9
-- Docker 
+- Python 3.9 
